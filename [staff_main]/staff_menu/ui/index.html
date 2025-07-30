@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Staff Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div id="staffMenu" style="display: none;">
+        <div class="menu-header">
+            <i class="fas fa-user-shield"></i>
+            <h1>Harper's Staff Menu</h1>
+        </div>
+        <div class="tabs">
+            <button onclick="showTab('players')">Player Management</button>
+            <button onclick="showTab('server')">Server Options</button>
+            <button onclick="closeMenu()">X</button>
+        </div>
+        <div id="tab-players" class="tab-content">
+            <input type="text" placeholder="Search..." id="searchInput" oninput="filterPlayers()">
+            <ul id="playerList"></ul>
+            <div id="playerActions" class="actions"></div>
+        </div>
+        <div id="tab-server" class="tab-content">
+            <div id="serverOptions"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Drop Reason -->
+    <div id="reasonModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h3>Drop Player Reason</h3>
+            <textarea id="dropReasonInput" placeholder="Enter reason here..." rows="4" style="width: 100%; border-radius: 8px; padding: 8px;"></textarea>
+            <div style="margin-top:10px; text-align: right;">
+                <button id="cancelReasonBtn" class="actionBtn">Cancel</button>
+                <button id="submitReasonBtn" class="actionBtn">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
